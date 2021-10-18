@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/listRecyclerView">
+
+    <fragment
+        android:id="@+id/listRecyclerView"
+        android:name="com.bilgehankalay.fragmentrecyclerview.ListRecyclerView"
+        android:label="fragment_list_recycler_view"
+        tools:layout="@layout/fragment_list_recycler_view" >
+        <action
+            android:id="@+id/list_to_detail"
+            app:destination="@id/detailRecyclerView" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailRecyclerView"
+        android:name="com.bilgehankalay.fragmentrecyclerview.DetailRecyclerView"
+        android:label="fragment_detail_recycler_view"
+        tools:layout="@layout/fragment_detail_recycler_view" >
+        <argument
+            android:name="model"
+            app:argType="com.bilgehankalay.fragmentrecyclerview.Model" />
+        <action
+            android:id="@+id/detail_to_list"
+            app:destination="@id/listRecyclerView" />
+    </fragment>
+</navigation>
